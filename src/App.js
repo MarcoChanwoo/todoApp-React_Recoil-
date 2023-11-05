@@ -9,6 +9,9 @@ function App() {
   return (
     <div className="App">
       <TodoItemCreator />
+      {todoList.map((todoItem) => (
+        <todoItem key={todoItem.id} item={todoItem} />
+      ))}
     </div>
   );
 }
