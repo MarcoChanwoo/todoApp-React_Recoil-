@@ -5,9 +5,13 @@ import { todoListState } from "../todoAtoms";
 const TodoItem = ({ item }) => {
   const [todoList, setTodoList] = useRecoilState(todoListState);
 
+  const editItemText = ({ target: { value } }) => {
+    const newList = replaceItemIndex(todoList, index);
+  };
+
   return (
     <div>
-      <input type="text" value={item.text} />
+      <input type="text" value={item.text} onChange={editItemText} />
     </div>
   );
 };
