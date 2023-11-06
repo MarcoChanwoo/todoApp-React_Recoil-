@@ -11,6 +11,7 @@ const TodoItem = ({ item }) => {
       ...item,
       text: value,
     });
+    setTodoList(newList);
   };
 
   return (
