@@ -7,7 +7,10 @@ const TodoItem = ({ item }) => {
   const index = todoList.findIndex((listItem) => listItem === item);
 
   const editItemText = ({ target: { value } }) => {
-    const newList = replaceItemIndex(todoList, index);
+    const newList = replaceItemAtIndex(todoList, index, {
+      ...item,
+      text: value,
+    });
   };
 
   return (
@@ -18,3 +21,7 @@ const TodoItem = ({ item }) => {
 };
 
 export default TodoItem;
+
+function replaceItemAtIndex(arr, index, newValue) {
+  return [...arr.slice(0, index), newValue, ...arr.slice(index + 1)];
+}
