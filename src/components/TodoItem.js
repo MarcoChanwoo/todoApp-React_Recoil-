@@ -22,6 +22,8 @@ const TodoItem = ({ item }) => {
     setTodoList(newList);
   };
 
+  const deleteItem = () => {};
+
   return (
     <div>
       <input type="text" value={item.text} onChange={editItemText} />
@@ -30,6 +32,7 @@ const TodoItem = ({ item }) => {
         checked={item.isComplete}
         onChange={toggleItemCompletion}
       />
+      <button onClick={deleteItem}>X</button>
     </div>
   );
 };
