@@ -14,7 +14,12 @@ const TodoItem = ({ item }) => {
     setTodoList(newList);
   };
 
-  const toggleItemCompletion = () => {};
+  const toggleItemCompletion = () => {
+    const newList = replaceItemAtIndex(todoList, index, {
+      ...item,
+      isComplete: !item.isComplete,
+    });
+  };
 
   return (
     <div>
