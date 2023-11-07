@@ -14,10 +14,16 @@ const TodoItem = ({ item }) => {
     setTodoList(newList);
   };
 
+  const toggleItemCompletion = () => {};
+
   return (
     <div>
       <input type="text" value={item.text} onChange={editItemText} />
-      <input type="checkbox" checked={true} />
+      <input
+        type="checkbox"
+        checked={item.isComplete}
+        onChange={toggleItemCompletion}
+      />
     </div>
   );
 };
