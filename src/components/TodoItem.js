@@ -19,6 +19,7 @@ const TodoItem = ({ item }) => {
       ...item,
       isComplete: !item.isComplete,
     });
+    setTodoList(newList);
   };
 
   return (
