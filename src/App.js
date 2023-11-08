@@ -1,12 +1,14 @@
 import { useRecoilValue } from "recoil";
 import "./App.css";
 import TodoItemCreator from "./components/TodoItemCreator";
-import { todoListState } from "./todoAtoms";
+import { filteredTodoListState, todoListState } from "./todoAtoms";
 import TodoItem from "./components/TodoItem";
 
 function App() {
   const todoList = useRecoilValue(todoListState);
-  console.log(todoList);
+  const filteredTodoList = useRecoilValue(filteredTodoListState);
+  console.log("todoList", todoList);
+  console.log("filteredTodoList", filteredTodoList);
   return (
     <div className="App">
       <TodoItemCreator />
