@@ -3,6 +3,7 @@ import "./App.css";
 import TodoItemCreator from "./components/TodoItemCreator";
 import { filteredTodoListState, todoListState } from "./todoAtoms";
 import TodoItem from "./components/TodoItem";
+import TodoListFilters from "./components/TodoListFilters";
 
 function App() {
   const todoList = useRecoilValue(todoListState);
@@ -11,8 +12,9 @@ function App() {
   console.log("filteredTodoList", filteredTodoList);
   return (
     <div className="App">
+      <TodoListFilters />
       <TodoItemCreator />
-      {todoList.map((todoItem) => (
+      {filteredTodoList.map((todoItem) => (
         <TodoItem key={todoItem.id} item={todoItem} />
       ))}
     </div>
