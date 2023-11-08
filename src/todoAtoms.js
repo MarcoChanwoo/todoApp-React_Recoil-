@@ -1,4 +1,4 @@
-import { atom } from "recoil";
+import { atom, selector } from "recoil";
 
 export const todoListState = atom({
   key: "todoListState",
@@ -8,4 +8,12 @@ export const todoListState = atom({
 export const todoListFilterState = atom({
   key: "todoListFilterState",
   default: "Show All",
+});
+
+export const filteredTodoListState = selector({
+  key: "filteredTodoListState",
+  get: ({ get }) => {
+    const filter = get(todoListFilterState);
+    const list = get(todoListState);
+  },
 });
