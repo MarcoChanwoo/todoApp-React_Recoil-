@@ -8,7 +8,11 @@ const TodoListStats = () => {
 
   const formattedPercentCompleted = Math.round(percentCompleted * 100);
 
-  return <ul>TodoListStats</ul>;
+  return (
+    <ul>
+      <li>Total items: {totalNum}</li>
+    </ul>
+  );
 };
 
 export default TodoListStats;
