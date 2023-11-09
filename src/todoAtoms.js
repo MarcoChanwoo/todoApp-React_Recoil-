@@ -30,6 +30,8 @@ export const filteredTodoListState = selector({
 export const todoListStatsState = selector({
   key: "todoListStatsState",
   get: ({ get }) => {
-    const todoList = todoList.length;
+    const todoList = get(todoListState);
+    const totalNum = todoList.length;
+    const totalCompletedNum = todoList - totalCompletedNum;
   },
 });
