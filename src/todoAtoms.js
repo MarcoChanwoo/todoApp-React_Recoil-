@@ -33,5 +33,6 @@ export const todoListStatsState = selector({
     const todoList = get(todoListState);
     const totalNum = todoList.length;
     const totalCompletedNum = todoList - totalCompletedNum;
+    const percentCompleted = totalNum === 0 ? 0 : totalCompletedNum / totalNum;
   },
 });
