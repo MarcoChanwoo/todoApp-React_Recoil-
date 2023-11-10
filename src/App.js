@@ -6,6 +6,7 @@ import TodoItem from "./components/TodoItem";
 import TodoListFilters from "./components/TodoListFilters";
 import TodoListStats from "./components/TodoListStats";
 import { currentUserNameQuery } from "./userAtoms";
+import React from "react";
 
 function App() {
   // const todoList = useRecoilValue(todoListState);
@@ -14,7 +15,9 @@ function App() {
   // console.log("filteredTodoList", filteredTodoList);
   return (
     <div className="App">
-      <CurrentUserInfo />
+      <React.Suspense>
+        <CurrentUserInfo />
+      </React.Suspense>
       <TodoListStats />
       <TodoListFilters />
       <TodoItemCreator />
