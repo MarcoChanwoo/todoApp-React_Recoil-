@@ -15,7 +15,7 @@ function App() {
   // console.log("filteredTodoList", filteredTodoList);
   return (
     <div className="App">
-      <React.Suspense>
+      <React.Suspense fallback={<div>...loading</div>}>
         <CurrentUserInfo />
       </React.Suspense>
       <TodoListStats />
